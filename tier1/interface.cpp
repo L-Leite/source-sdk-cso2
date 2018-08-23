@@ -322,7 +322,7 @@ CSysModule *Sys_LoadModule( const char *pModuleName, Sys_Flags flags /* = SYS_NO
 
 	if ( !Q_IsAbsolutePath( pModuleName ) )
 	{			  
-		std::filesystem::path modulePath = GetCSO2PreCommandLineParser()->GetAnsiFullDirectoryCstr();
+		std::filesystem::path modulePath = GetCSO2PreCommandLineParser()->GetAnsiBinDirectory();
 		modulePath += pModuleName;
 
 		char szAbsoluteModuleName[1024];
