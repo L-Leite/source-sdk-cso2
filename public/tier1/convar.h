@@ -120,6 +120,7 @@ public:
 	virtual bool				IsFlagSet( int flag ) const;
 	// Set flag
 	virtual void				AddFlags( int flags );
+	inline void					RemoveFlags( int flags ) { m_nFlags &= ~flags; }
 
 	// Return name of cvar
 	virtual const char			*GetName( void ) const;
