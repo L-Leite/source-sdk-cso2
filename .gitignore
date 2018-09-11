@@ -402,4 +402,6 @@ CMakeLists.txt.user*
 *.vcxproj.user
 *.vcxproj.vpc_crc
 
-!devtools/bin
+!devtools/bin/*/**
+!devtools/bin/
+!devtools/bin/*.*
