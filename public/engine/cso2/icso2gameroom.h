@@ -1,6 +1,7 @@
 #pragma once
 
-#include <stdint.h>
+#include "tier0/dbg.h"
+#include <cstdint>
 
 abstract_class ICSO2GameRoom
 {

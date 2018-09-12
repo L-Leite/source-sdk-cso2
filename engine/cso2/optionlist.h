@@ -1,6 +1,6 @@
 #pragma once
 
-#include <stdint.h>
+#include <cstdint>
 #include <string>
 
 struct BaseOptionList
@@ -15,8 +15,7 @@ struct BaseOptionList
 struct ModOptionList : public BaseOptionList
 {
 	ModOptionList();
-	virtual ~ModOptionList() = default;		
-	ModOptionList& operator=(const ModOptionList& other);
+	~ModOptionList() override = default;		
 
 	uint32_t m_Unknown02; //0x000C
 	uint32_t m_Unknown03; //0x0010
@@ -31,7 +30,7 @@ struct ModOptionList : public BaseOptionList
 struct AutoMatchOptionList : public BaseOptionList
 {
 	AutoMatchOptionList();
-	virtual ~AutoMatchOptionList() = default;
+	~AutoMatchOptionList() override = default;
 
 	std::string m_Unknown02;
 	uint32_t m_Unknown03;

@@ -17,13 +17,13 @@ CSO2ModInfo::CSO2ModInfo()
 bool CSO2ModInfo::Unknown00()
 {
 	return true;
-}					
+}
 
-bool CSO2ModInfo::AssignOptionValues(BaseOptionList* pOptionList, int a3, KeyValues* a4)
-{ 
-	UNREF_VAR(pOptionList);
-	UNREF_VAR(a3);
-	UNREF_VAR(a4);
+bool CSO2ModInfo::AssignOptionValues( BaseOptionList* pOptionList, int32_t a3, KeyValues* a4 )
+{
+	UNREF_VAR( pOptionList );
+	UNREF_VAR( a3 );
+	UNREF_VAR( a4 );
 	return true;
 }
 

@@ -2,10 +2,6 @@
 
 #define UNREF_VAR(var) var
 
-CSO2AutoMatchModInfo::CSO2AutoMatchModInfo()
-{
-}
-
 //
 // our virtuals won't be used anyway
 //
@@ -14,7 +10,7 @@ bool CSO2AutoMatchModInfo::Unknown00()
 	return true;
 }
 
-bool CSO2AutoMatchModInfo::AssignOptionValues(BaseOptionList* pOptionList, int a3, KeyValues* a4)
+bool CSO2AutoMatchModInfo::AssignOptionValues(BaseOptionList* pOptionList, int32_t a3, KeyValues* a4)
 {
 	UNREF_VAR(pOptionList);
 	UNREF_VAR(a3);

@@ -1,15 +1,15 @@
 #pragma once
 
-#include <stdint.h>
+#include <cstdint>
 #include <string>
 #include <vector>
 
 struct ClanGrade
 {											 
-	int iLevel;
-	int iMinExp;
-	int iMaxExp;
-	int iBonusExp;
+	int32_t iLevel;
+	int32_t iMinExp;
+	int32_t iMaxExp;
+	int32_t iBonusExp;
 	std::string iGrade;
 };
 

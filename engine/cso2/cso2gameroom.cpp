@@ -1,23 +1,23 @@
-#include "tier0/dbg.h"		
 #include "cso2gameroom.h"
 #include "modulelist.h"
-							   
-CSO2GameRoom::CSO2GameRoom(uint16_t iRoomId)
+
+CSO2GameRoom::CSO2GameRoom( uint16_t iRoomId )
 {
-	using fn_t = void(__thiscall*)(CSO2GameRoom*, uint16_t);
+	using fn_t = void( __thiscall* )(CSO2GameRoom*, uint16_t);
 	static fn_t pFn = nullptr;
 
 	if (!pFn)
 	{
-		//pFn = (fn_t)(g_ModuleList.Get(L"engine.dll") + 0x2A8B40);
-		pFn = (fn_t)(g_ModuleList.Get(L"engine.dll") + 0x2D92A0);
+		// points to the address of CSO2GameRoom constructor
+		// we need this so we get the game's vftable
+		pFn = (fn_t)(g_ModuleList.Get( "engine.dll" ) + 0x2D92A0);
 	}
 
-	pFn(this, iRoomId);
+	pFn( this, iRoomId );
 }
 
-void CSO2GameRoom::SetupRoomRules(uint8_t iGameModeId, uint8_t iWinLimit, uint8_t iKillLimit)
-{	   
+void CSO2GameRoom::SetupRoomRules( uint8_t iGameModeId, uint8_t iWinLimit, uint8_t iKillLimit )
+{
 	m_iGameModeId = iGameModeId;
 	m_iWinLimit = iWinLimit;
 	m_iKillLimit = iKillLimit;
@@ -25,8 +25,8 @@ void CSO2GameRoom::SetupRoomRules(uint8_t iGameModeId, uint8_t iWinLimit, uint8_
 	m_bEnablePlayerMarkers = true;
 }
 
-void CSO2GameRoom::SetBots(int8_t iCtBots, int8_t iTrBots)
-{ 
+void CSO2GameRoom::SetBots( int8_t iCtBots, int8_t iTrBots )
+{
 	m_bBotsEnabled = true;
 	m_iCtBots = iCtBots;
 	m_iTrBots = iTrBots;
@@ -73,8 +73,8 @@ uint8_t CSO2GameRoom::GetGameModeId()
 	return 0;
 }
 
-void CSO2GameRoom::SetMapId(uint8_t iMapId)
-{	
+void CSO2GameRoom::SetMapId( uint8_t iMapId )
+{
 }
 
 uint8_t CSO2GameRoom::GetMapId()
@@ -312,20 +312,20 @@ uint8_t CSO2GameRoom::GetUnknown44()
 	return 0;
 }
 
-uint8_t& CSO2GameRoom::AddToUnknown45(uint8_t _Keyval, uint8_t& _Mapval)
+uint8_t& CSO2GameRoom::AddToUnknown45( uint8_t _Keyval, uint8_t& _Mapval )
 {
 	static uint8_t res = 0;
 	return res;
 }
 
-uint8_t& CSO2GameRoom::GetUnknown45(uint8_t _Keyval)
+uint8_t& CSO2GameRoom::GetUnknown45( uint8_t _Keyval )
 {
 	static uint8_t res = 0;
 	return res;
 }
 
-void CSO2GameRoom::SetUnknown30(uint8_t iUnknown30)
-{	
+void CSO2GameRoom::SetUnknown30( uint8_t iUnknown30 )
+{
 }
 
 uint32_t CSO2GameRoom::SomethingToDoWith45()

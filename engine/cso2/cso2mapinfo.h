@@ -10,13 +10,13 @@
 class CSO2MapInfo : public CSO2ModMapInfo
 {
 public:
-	CSO2MapInfo();
-	virtual ~CSO2MapInfo() = default;
-	virtual bool Unknown00();
-	virtual bool AssignOptionValues(BaseOptionList* pOptionList, int a3, KeyValues* a4);
+	CSO2MapInfo() = default;
+	~CSO2MapInfo() override = default;
+	bool Unknown00() override;
+	bool AssignOptionValues(BaseOptionList* pOptionList, int32_t a3, KeyValues* a4) override;
 	//virtual void Unknown02();
-	virtual BaseOptionList* CreateOptionList();
-	virtual bool Unknown04();
+	BaseOptionList* CreateOptionList() override;
+	bool Unknown04() override;
 
 private:
 	// leftovers from an early version?
@@ -25,8 +25,8 @@ private:
 	// if (flag & MAPINFO_FLAG_NEW == true) then it's a new map
 	// if (flag & MAPINFO_FLAG_EVENT == true) then it's an event map
 	// if (flag & MAPINFO_FLAG_CONTINUOUS == true) then it can be used in a playlist or something
-	std::vector<int> m_vMapFlags; //0x0080
+	std::vector<int32_t> m_vMapFlags; //0x0080
 
-	std::vector<int> m_vCategory; //0x008C
-	std::map<int, int> m_Unknown03; //0x0098 unknown type
+	std::vector<int32_t> m_vCategory; //0x008C
+	std::map<int32_t, int32_t> m_Unknown03; //0x0098 unknown type
 };
