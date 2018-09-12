@@ -10,7 +10,7 @@ CSO2GameRoom::CSO2GameRoom( uint16_t iRoomId )
 	{
 		// points to the address of CSO2GameRoom constructor
 		// we need this so we get the game's vftable
-		pFn = (fn_t)(g_ModuleList.Get( "engine.dll" ) + 0x2D92A0);
+		pFn = reinterpret_cast<fn_t>(g_ModuleList.Get( "engine.dll" ) + 0x2D92A0);
 	}
 
 	pFn( this, iRoomId );
