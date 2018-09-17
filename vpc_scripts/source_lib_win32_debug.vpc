@@ -89,7 +89,7 @@ $Configuration "Debug"
 		$EnableC++Exceptions				"No"
 		$SmallerTypeCheck
 		$BasicRuntimeChecks					"Default"
-		$RuntimeLibrary						"Multi-threaded Debug (/MTd)"
+		$RuntimeLibrary						"Multi-threaded Debug DLL (/MDd)"
 		$StructMemberAlignment
 		$BufferSecurityCheck				"Yes"
 		$EnableFunctionLevelLinking
