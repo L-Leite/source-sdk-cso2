@@ -395,6 +395,8 @@ private:
 	// m_pParent->m_pParent must equal m_pParent (ie: m_pParent must be the root, or original, ConVar).
 	ConVar						*m_pParent;
 
+	int unk;
+
 	// Static data
 	const char					*m_pszDefaultValue;
 	
